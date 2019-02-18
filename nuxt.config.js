@@ -2,7 +2,7 @@ const pkg = require('./package')
 const path = require('path')
 module.exports = {
   mode: 'universal',
-  srcDir: 'client/',
+  srcDir: 'src/client/',
   /*
    ** Headers of the page
    */

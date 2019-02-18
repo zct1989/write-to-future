@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { Builder, Nuxt } from 'nuxt'
-import * as nuxtConfig from '../nuxt.config'
+import * as nuxtConfig from '../../nuxt.config'
 import * as express from 'express'
 
 async function bootstrap() {
