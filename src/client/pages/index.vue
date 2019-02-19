@@ -1,31 +1,19 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        ttt
-      </h1>
-      <h2 class="subtitle">
-        Welcome to the iView + Nuxt.js template
-      </h2>
-      <div class="links">
-        <Button
-          type="primary"
-          target="_blank"
-          to="https://nuxtjs.org/"
-        >Documentation</Button>
-        <Button
-          target="_blank"
-          to="https://github.com/nuxt/nuxt.js"
-        >GitHub</Button>
-        <Button
-          target="_blank"
-          to="https://www.iviewui.com/"
-        >iView</Button>
-      </div>
-    </div>
-  </section>
-</template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Ionic Blank
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
 
+    <ion-content>
+      The world is your oyster.
+      <p>If you get lost, the <a target="_blank" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+    </ion-content>
+  </ion-page>
+</template>
 <script>
 export default {
   components: {},

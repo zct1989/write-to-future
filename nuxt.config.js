@@ -13,7 +13,18 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    script: [{ src: 'https://unpkg.com/@ionic/core@4.0.1/dist/ionic.js' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/@ionic/core@4.0.1/css/ionic.bundle.css'
+      }
+    ]
   },
 
   /*
@@ -29,7 +40,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/webcomponent'],
 
   /*
    ** Nuxt.js modules
