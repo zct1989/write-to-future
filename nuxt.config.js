@@ -1,5 +1,6 @@
 const pkg = require('./package')
-const path = require('path')
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+
 module.exports = {
   mode: 'universal',
   srcDir: 'src/client/',
@@ -13,16 +14,12 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    script: [{ src: 'https://unpkg.com/@ionic/core@4.0.1/dist/ionic.js' }],
     link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://unpkg.com/@ionic/core@4.0.1/css/ionic.bundle.css'
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
       }
     ]
   },
@@ -35,31 +32,30 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/style/app.styl'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/webcomponent'],
+  plugins: ['@/plugins/vuetify'],
 
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-  ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+  modules: [],
 
   /*
    ** Build configuration
    */
   build: {
+    transpile: ['vuetify/lib'],
+    plugins: [new VuetifyLoaderPlugin()],
+    loaders: {
+      stylus: {
+        import: ['~assets/style/variables.styl']
+      }
+    },
+
     /*
      ** You can extend webpack config here
      */
