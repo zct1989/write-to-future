@@ -19,10 +19,10 @@ export class Letter extends BaseEntity {
   @Column('text')
   public content
 
-  @Column('datetime', {
+  @Column('timestamp', {
     nullable: true
   })
-  public sendTime
+  public sendTime: number
 
   @Column('boolean')
   public isPublic: boolean
