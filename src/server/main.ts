@@ -4,11 +4,12 @@ import { Builder, Nuxt } from 'nuxt'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import * as nuxtConfig from '../../nuxt.config'
 import * as express from 'express'
+import { Logger } from '@nestjs/common'
 
 async function bootstrap() {
   // 试用express作为服务容器
   const server = express()
-
+  const logger = new Logger()
   // 加载nuxt
   const nuxt = await new Nuxt(nuxtConfig)
   nuxtConfig.dev = !(process.env.NODE_ENV === 'production')
@@ -32,8 +33,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options)
   SwaggerModule.setup('doc', app, document)
 
-  await app.listen(3000, () => {
-    return
-  })
+  await app.listen(3000).then(() => logger.log('http://localhost:3000'))
 }
 bootstrap()

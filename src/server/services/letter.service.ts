@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Letter } from '../entities/letter.entity'
 import { Repository } from 'typeorm'
-import { Query, Args } from '@nestjs/graphql'
 
 @Injectable()
 export class LetterService {
@@ -13,5 +12,9 @@ export class LetterService {
 
   public async findOneById(id: number) {
     return await this.letterRepository.findOne(id)
+  }
+
+  public async findAll() {
+    return await this.letterRepository.find()
   }
 }

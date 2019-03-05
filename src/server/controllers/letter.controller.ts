@@ -4,24 +4,19 @@ import {
   Body,
   ValidationPipe,
   UsePipes,
-  Logger
+  Logger,
+  Get
 } from '@nestjs/common'
 import { LetterDto } from '../dtos/letter.dto'
 import { ApiUseTags } from '@nestjs/swagger'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Letter } from '../entities/letter.entity'
-import { Repository } from 'typeorm'
+import { LetterService } from '../services/letter.service'
 
 @ApiUseTags('letter')
 @Controller('api/letter')
 export class LetterController {
-  constructor(
-    @InjectRepository(Letter)
-    private readonly letterRepository: Repository<Letter>,
-    private logger: Logger
-  ) {
-    return
-  }
+  constructor(private letterService: LetterService, private logger: Logger) {}
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -32,5 +27,10 @@ export class LetterController {
     this.logger.log(letter)
     await receiver.save()
     await letter.save()
+  }
+
+  @Get()
+  public async find() {
+    return await this.letterService.findAll()
   }
 }
