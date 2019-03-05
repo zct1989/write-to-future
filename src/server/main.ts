@@ -17,7 +17,7 @@ async function bootstrap() {
   }
 
   // 其他分流至nuxt
-  server.get(/^(?!\/?(api|doc)).+$/, (request, response) =>
+  server.get(/^(?!\/?(api|doc|graphql)).+$/, (request, response) =>
     nuxt.render(request, response)
   )
 
