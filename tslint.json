@@ -8,6 +8,7 @@
     "tslint-config-prettier"
   ],
   "rules": {
+    "no-return-await": false,
     "object-literal-sort-keys": [
       false,
       {
@@ -22,10 +23,7 @@
       }
     ],
     "no-console": true,
-    "semicolon": [
-      true,
-      "never"
-    ],
+    "semicolon": [true, "never"],
     "no-floating-promises": false,
     "max-classes-per-file": false
   }

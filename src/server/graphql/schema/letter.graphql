@@ -1,0 +1,16 @@
+type Letter {
+  id: Int!
+  content: String
+  sendTime: String
+  receiver: Receiver
+}
+
+type Receiver {
+  id: Int!
+  email: String
+  weixin: String!
+}
+
+type Query {
+  letter(id: Int!): Letter
+}
