@@ -32,6 +32,16 @@ $ npm run test
 # $ npm run test:cov
 ```
 
+## Commit
+
+`commit`使用`cz-conventional-changelog`生成`commit`内容，通过`commitlint`进行检测。
+
+请如下方式进行`commit`
+
+```
+npm run commit
+```
+
 ## 端口
 
 ```
