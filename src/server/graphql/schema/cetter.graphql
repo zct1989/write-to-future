@@ -1,0 +1,16 @@
+type Receiver {
+  id: Int!
+  email: String
+  ccc: String
+}
+
+type Cetter {
+  id: Int!
+  content: String
+  sendTime: String
+  receiver: Receiver
+}
+
+type Query {
+  cetter(id: Int): Cetter
+}

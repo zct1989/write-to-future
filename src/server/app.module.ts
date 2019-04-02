@@ -8,6 +8,8 @@ import { Receiver } from './entities/receiver.entity'
 import { LetterService } from './services/letter.service'
 import { ReceiverService } from './services/receiver.service'
 import { LetterResolver } from './graphql/resolvers/letter.resolvers'
+import { join } from 'path'
+import { CetterResolver } from './graphql/resolvers/cetter.resolvers'
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -19,6 +21,12 @@ import { LetterResolver } from './graphql/resolvers/letter.resolvers'
     })
   ],
   controllers: [LetterController],
-  providers: [Logger, LetterService, ReceiverService, LetterResolver]
+  providers: [
+    Logger,
+    LetterService,
+    ReceiverService,
+    LetterResolver,
+    CetterResolver
+  ]
 })
 export class AppModule {}

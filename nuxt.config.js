@@ -1,6 +1,5 @@
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-
 module.exports = {
   mode: 'universal',
   srcDir: 'src/client/',
@@ -42,7 +41,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['nuxt-ts'],
 
   /*
    ** Build configuration

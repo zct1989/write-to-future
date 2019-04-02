@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    123
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -29,7 +30,7 @@
       fixed
       app
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <!-- <v-toolbar-side-icon @click="drawer = !drawer" /> -->
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -86,30 +87,30 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+
+@Component({})
+export default class extends Vue {
+  clipped = false
+  drawer = false
+  fixed = false
+  items = [
+    {
+      icon: 'apps',
+      title: 'Welcome',
+      to: '/'
+    },
+    {
+      icon: 'bubble_chart',
+      title: 'Inspire',
+      to: '/inspire'
     }
-  }
+  ]
+  miniVariant = false
+  right = true
+  rightDrawer = false
+  title = 'Vuetify.js'
 }
 </script>
+
