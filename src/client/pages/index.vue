@@ -1,64 +1,78 @@
 <template>
   <v-layout
-    column
-    justify-center
+    class="home-page pa-2 white--text"
     align-center
+    justify-space-between
+    column
+    fill-height
   >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >documentation</a>.</p>
-          <p>If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >discord</a>.</p>
-          <p>Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >Nuxt Documentation</a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire"
-          >Continue</v-btn>
-        </v-card-actions>
-      </v-card>
+    <v-flex xs6>
+      <v-layout
+        row
+        wrap
+        align-center
+        class="pa-3"
+      >
+        <v-flex
+          xs10
+          class="display-1"
+        >写给未来的信</v-flex>
+        <v-flex xs2>
+          <span>
+            <v-icon dark>info_outline</v-icon>
+          </span>
+        </v-flex>
+        <v-flex
+          xs12
+          class="mt-1"
+        >已经寄出1000封</v-flex>
+      </v-layout>
+    </v-flex>
+    <v-flex xs6>
+      <v-layout
+        fill-height
+        row
+        wrap
+        justify-space-between
+        align-content-end
+        class="text-xs-center pb-3"
+      >
+        <v-flex
+          xs3
+          @click="$router.push('public')"
+        >
+          <v-icon
+            dark
+            class="d-block"
+          >remove_red_eye</v-icon>
+          <span class="d-block pa-2">公开信件</span>
+        </v-flex>
+        <v-flex
+          xs3
+          @click="$router.push('write')"
+        >
+          <v-icon
+            dark
+            class="d-block"
+          >create</v-icon>
+          <span class="d-block pa-2">撰写</span>
+        </v-flex>
+      </v-layout>
     </v-flex>
   </v-layout>
 </template>
+
+<style lang="less" scoped>
+.home-page {
+  & > * {
+    width: 100%;
+  }
+  background-image: url('../assets/image/background.jpg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+</style>
+
 
 <script lang="ts">
 import Logo from '../components/Logo.vue'
@@ -71,6 +85,5 @@ import { Component, Vue } from 'vue-property-decorator'
     VuetifyLogo
   }
 })
-export default class extends Vue {
-}
+export default class extends Vue {}
 </script>
