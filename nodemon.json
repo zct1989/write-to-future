@@ -2,5 +2,5 @@
   "watch": ["src/server", "nuxt.config.js"],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node -r tsconfig-paths/register src/server/main.ts"
+  "exec": "ts-node -r tsconfig-paths/register --project tsconfig.build.json src/server/main.ts"
 }

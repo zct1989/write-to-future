@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { Builder, Nuxt } from 'nuxt'
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
+// import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import * as nuxtConfig from '../../nuxt.config'
 import * as express from 'express'
 import { Logger } from '@nestjs/common'
