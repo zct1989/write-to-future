@@ -1,7 +1,13 @@
 {
   "rulesDirectory": [],
   "linterOptions": {
-    "exclude": ["*.json", "**/*.json", "**/*.spec.ts", "node_modules/**/*"]
+    "exclude": [
+      "*.js",
+      "*.json",
+      "**/*.json",
+      "**/*.spec.ts",
+      "node_modules/**/*"
+    ]
   },
   "extends": [
     "tslint:recommended",

@@ -1,16 +1,17 @@
 module.exports = function(ctx) {
   return {
     animations: ['fadeIn', 'fadeOut'],
-    extras: [],
+    extras: ['fontawesome-v5'],
     framework: {
+      components: ['QAvatar', 'QBtn'],
+      directives: ['ClosePopup'],
+      plugins: [],
       config: {
         brand: {
           primary: '#ffffff'
         }
       },
-      components: ['QAvatar', 'QBtn'],
-      directives: ['ClosePopup'],
-      plugins: [],
+
       iconSet: 'fontawesome-v5',
       cssAddon: true
     },

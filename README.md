@@ -4,7 +4,7 @@ Write to Future - 写给未来的你
 
 ## 简介
 
-本项目使用 Vue + Vuetify + Nuxt + Nestjs + Typescript 构建
+本项目使用 Vue + Quasar + Nuxt + Nestjs + Typescript 构建
 
 ## 安装
 
