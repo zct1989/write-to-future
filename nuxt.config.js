@@ -42,10 +42,17 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/apollo'],
   buildModules: ['@nuxt/typescript-build'],
   /*
    ** Build configuration
    */
-  build: {}
+  build: {},
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:3000/graphql'
+      }
+    }
+  }
 }

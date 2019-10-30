@@ -14,6 +14,11 @@ export class LetterResolver {
     return await this.letterService.findOneById(id)
   }
 
+  @Query('letters')
+  public async getLetters() {
+    return await this.letterService.findAll()
+  }
+
   @ResolveProperty('receiver')
   public async getReceiver(@Parent() letter) {
     const { receiverId } = letter

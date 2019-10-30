@@ -13,4 +13,5 @@ type Receiver {
 
 type Query {
   letter(id: Int): Letter
+  letters: [Letter]!
 }
