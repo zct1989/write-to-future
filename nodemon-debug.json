@@ -1,5 +1,5 @@
 {
-  "watch": ["server", "nuxt.config.js"],
+  "watch": ["src/server", "nuxt.config.js"],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
   "exec": "node --inspect-brk -r ts-node/register -r tsconfig-paths/register src/server/main.ts"

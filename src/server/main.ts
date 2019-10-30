@@ -6,6 +6,7 @@ import * as nuxtConfig from '../../nuxt.config'
 import * as express from 'express'
 import { Logger } from '@nestjs/common'
 import { ExpressAdapter } from '@nestjs/platform-express'
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 
 async function bootstrap() {
   // 试用express作为服务容器
@@ -29,13 +30,14 @@ async function bootstrap() {
   })
 
   // 加载swagger
-  // const options = new DocumentBuilder()
-  //   .setTitle('example')
-  //   .setDescription('api description')
-  //   .setVersion('1.0')
-  //   .build()
-  // const document = SwaggerModule.createDocument(app, options)
-  // SwaggerModule.setup('doc', app, document)
+  const options = new DocumentBuilder()
+    .setTitle('example')
+    .setDescription('api description')
+    .setVersion('1.0')
+    .build()
+
+  const document = SwaggerModule.createDocument(app, options)
+  SwaggerModule.setup('doc', app, document)
 
   await app
     .listen(3000)
