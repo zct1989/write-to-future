@@ -1,6 +1,14 @@
-import { Resolver, Query, ResolveProperty, Parent, Args } from '@nestjs/graphql'
+import {
+  Resolver,
+  Query,
+  ResolveProperty,
+  Parent,
+  Args,
+  Mutation
+} from '@nestjs/graphql'
 import { LetterService } from '../../services/letter.service'
 import { ReceiverService } from '../../services/receiver.service'
+import { Letter } from 'src/server/entities/letter.entity'
 
 @Resolver('Letter')
 export class LetterResolver {
@@ -23,5 +31,20 @@ export class LetterResolver {
   public async getReceiver(@Parent() letter) {
     const { receiverId } = letter
     return await this.receiverService.findOneById(receiverId)
+  }
+
+  @Mutation()
+  public async createLetter(
+    @Args('content') content: string,
+    @Args('sendTime') sendTime: string,
+    @Args('receiverEmail') receiverEmail: string,
+    @Args('receiverWeixin') receiverWeixin: string
+  ) {
+    return await this.letterService.addLetter({
+      content,
+      sendTime,
+      receiverEmail,
+      receiverWeixin
+    })
   }
 }

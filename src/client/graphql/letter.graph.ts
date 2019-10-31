@@ -24,3 +24,21 @@ export const getLetter = gql`
   }
   ${letterFragment}
 `
+
+export const createLetter = gql`
+  mutation creaetLetter(
+    $content: String!
+    $sendTime: String!
+    $receiverEmail: String
+    $receiverWeixin: String
+  ) {
+    createLetter(
+      content: $content
+      sendTime: $sendTime
+      receiverEmail: $receiverEmail
+      receiverWeixin: $receiverWeixin
+    ) {
+      id
+    }
+  }
+`

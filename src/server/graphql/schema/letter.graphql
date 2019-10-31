@@ -15,3 +15,12 @@ type Query {
   letter(id: Int): Letter
   letters: [Letter]!
 }
+
+type Mutation {
+  createLetter(
+    content: String
+    sendTime: String
+    receiverEmail: String
+    receiverWeixin: String
+  ): Letter
+}

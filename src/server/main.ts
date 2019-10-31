@@ -1,9 +1,10 @@
+import * as nuxtConfig from '../../nuxt.config'
+import * as express from 'express'
+import * as open from 'open'
+
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { Builder, Nuxt } from 'nuxt'
-// import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
-import * as nuxtConfig from '../../nuxt.config'
-import * as express from 'express'
 import { Logger } from '@nestjs/common'
 import { ExpressAdapter } from '@nestjs/platform-express'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
